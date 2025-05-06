@@ -1,0 +1,1040 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* تعريف متغيرات الألوان والخطوط */
+:root{
+    --fros-blue-color: #58d0ff; /* لون أزرق أساسي */
+    --light-blue-color: #16c5ff; /* لون أزرق فاتح */
+    --dark-color: #202020; /* لون غامق للنصوص */
+    --light-gray: #dedede; /* لون رمادي فاتح */
+    --dark-gray: #a1a1a0; /* لون رمادي داكن */
+    --light-color: #fff; /* لون أبيض للخلفيات */
+    --poppins-font: 'Poppins', sans-serif; /* تحديد خط Poppins */
+    --transition: all 0.3s ease-in-out; /* تأثير انتقال سلس */
+    --box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2)!important; /* تأثير ظل للصناديق */
+}
+
+/* إعادة ضبط بعض الأنماط الافتراضية */
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html{
+    font-size: 10px; /* ضبط حجم الخط الأساسي */
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-family: var(--poppins-font);
+}
+img{
+    width: 100%;
+    display: block;
+}
+ul{
+    list-style: none; /* إزالة رموز القائمة */
+}
+a{
+    text-decoration: none; /* إزالة التأكيد التلقائي للروابط */
+    color: var(--dark-color);
+}
+
+/* ألوان الخلفية والنص */
+.bg-blue{
+    background-color:#005aa3
+}
+.bg-white{
+    background-color: var(--light-color);
+}
+.text-blue{
+    color: var(--fros-blue-color);
+}
+.text-white{
+    color: var(--light-color);
+}
+
+/* إعدادات الأزرار */
+.btn, button{
+    border: none;
+    cursor: pointer;
+}
+.btn{
+    padding: .9rem 4rem; /* تحديد التباعد الداخلي */
+    border-radius: 3rem; /* زوايا مستديرة */
+    display: inline-block;
+    background-color: var(--light-color);
+    font-weight: 500;
+    -webkit-box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+.btn:hover{
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+}
+
+/* إعدادات الحاويات */
+.container{
+    max-width: 95vw; /* تحديد عرض الحاوية */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid{
+    display: grid;
+}
+
+/* إعدادات النصوص */
+.lead{
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.text-md{
+    font-size: 1.5rem;
+}
+.text-lg{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.text-sm{
+    font-size: 1.3rem;
+}
+.text-center{
+    text-align: center;
+}
+
+/* إعدادات الرأس (Header) */
+.header{
+    min-height: 80vh;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    z-index: 999;
+}
+.navbar .container{
+    justify-content: space-between;
+}
+.navbar-brand img{
+    width: 140px;
+}
+
+/* إعدادات القائمة المنبثقة */
+.navbar-collapse{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 10%;
+    padding: 8rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: -3px 0 10px 4px rgba(0, 0, 0, 0.1);
+    transform: translateX(110%);
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+/* عند إظهار القائمة */
+ /* عند عرض القائمة الجانبية */
+.navbar-show{
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+}
+
+/* زر إخفاء القائمة الجانبية */
+.navbar-hide-btn{
+    position: absolute;
+    right: 2rem; /* ضبط مكان الزر على يمين الشاشة */
+    top: 4.5rem; /* تحديد المسافة من الأعلى */
+}
+
+/* عناصر القائمة */
+.nav-item{
+    margin: 1.4rem 0; /* إضافة مسافة بين عناصر القائمة */
+}
+
+/* روابط القائمة */
+.nav-link{
+    opacity: 0.8; /* جعل النصوص شبه شفافة قليلاً */
+    font-weight: 600; /* زيادة سماكة الخط */
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition); /* تطبيق تأثير انتقال سلس */
+    display: inline-block;
+}
+
+/* عند تمرير المؤشر فوق الروابط */
+.nav-link:hover{
+    opacity: 1; /* جعل النصوص واضحة بالكامل */
+    color: var(--fros-blue-color); /* تغيير لون النص */
+    -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+            transform: translateX(10px); /* تحريك النص عند التفاعل */
+}
+
+ 
+
+ 
+ 
+
+/* القسم الداخلي للعنوان */
+.header-inner{
+    padding-top: 16rem; /* تحديد المسافة العلوية */
+}
+
+/* عنوان رئيسي */
+.header-inner-left h1{
+    font-size: 4rem;
+    font-weight: 300; /* جعل النص أقل سماكة */
+    margin-bottom: 0;
+}
+
+/* تحديد جزء معين داخل العنوان */
+.header-inner-left h1 span{
+    font-weight: 600; /* تكبير سماكة الخط */
+    text-transform: uppercase; /* جعل النص بأحرف كبيرة */
+}
+
+/* ضبط شفافية النص */
+.header-inner-left .lead{
+    opacity: 0.9;
+}
+
+/* ضبط النصوص داخل القسم الداخلي */
+.header-inner-left .text{
+    margin: 5.8rem 0;
+    max-width: 500px; /* تحديد أقصى عرض للنص */
+    margin-right: auto;
+    margin-left: auto; /* ضبط المركز */
+}
+
+/* ضبط ترتيب الأزرار */
+.header-inner-left .btn-group{
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /* جعل الأزرار في المنتصف */
+}
+
+/* ضبط المسافة العلوية للقسم اليميني */
+.header-inner-right{
+    margin-top: 6rem;
+}
+
+/* ضبط حجم الصورة */
+.header-inner-right img{
+    max-width: 600px;
+    
+ 
+    margin-top: 5rem; /* تقليل المسافة العلوية */
+}
+
+
+
+ 
+  
+.package-service{
+    /* خلفية تحتوي على صورة وتأثير تدرج لوني */
+    background: linear-gradient(rgba(63, 110, 18, 0.85), rgba(213, 202, 0, 0.95)), 
+                url('../img/blog1.jpg') center/cover no-repeat;
+}
+.package-service-head{
+    color: var(--light-color); /* تغيير لون النص إلى الأبيض */
+}
+.package-service-head h2{
+    font-size: 39px; /* ضبط حجم الخط */
+}
+.package-service-item{
+    padding: 3rem 5rem; /* تحديد المسافات الداخلية */
+    position: relative;
+    margin-bottom: 12rem; /* إضافة هامش سفلي */
+}
+.package-service-item:last-child{
+    margin-bottom: 0; /* إزالة الهامش السفلي لآخر عنصر */
+}
+.package-service-item .icon{
+    /* أيقونة على شكل مربع مائل */
+    width: 86px;
+    height: 86px;
+    background-color: var(--light-blue-color); /* تغيير لون الخلفية */
+    border-radius: 2rem;
+    border-bottom-right-radius: 0; /* جعل الزاوية السفلى غير مدورة */
+    color: var(--light-color);
+    position: absolute;
+    top: -43px; /* تحديد موقع الأيقونة فوق العنصر */
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg); /* تدوير الأيقونة */
+}
+.package-service-item .icon i{
+    transform: rotate(-45deg); /* إعادة تدوير الأيقونة إلى وضعها الطبيعي */
+}
+.package-service-item h3{
+    opacity: 0.7;
+    margin: 8rem 0 4rem 0; /* ضبط الهوامش */
+}
+.package-service-item .text-sm{
+    color: var(--dark-gray); /* تغيير لون النص */
+}
+.package-service-item .btn{
+    margin: 4rem 0; /* ضبط المسافة حول الأزرار */
+}
+
+/* قسم "المشاركات" */
+.posts{
+    background-color: var(--light-gray); /* تحديد لون الخلفية */
+}
+.posts-inner{
+    margin-top: 6rem;
+}
+.post-item{
+    padding: 1.2rem;
+    box-shadow: var(--box-shadow); /* إضافة ظل للصندوق */
+    margin-bottom: 6rem;
+}
+.post-item:last-child{
+    margin-bottom: 0; /* إزالة الهامش السفلي لآخر عنصر */
+}
+.post-item .content{
+    padding: 3rem 2rem 1rem 2rem; /* ضبط التباعد الداخلي */
+}
+.post-item h4{
+    margin-bottom: 1rem; /* ضبط المسافة السفلية للعنوان */
+}
+.post-item .text{
+    padding: 1rem 0;
+}
+.post-item .info{
+    justify-content: space-between; /* توزيع المعلومات على الأطراف */
+    color: var(--dark-gray);
+}
+.post-item .info .text{
+    padding-bottom: 0;
+}
+ 
+@media(min-width: 992px){
+    .header-inner{
+        padding-top: 3.2rem;
+    }
+    .header-inner .container{
+        grid-template-columns: 545px auto; /* تحديد عرض الأعمدة */
+        align-items: center; /* ضبط المحاذاة */
+        height: calc(100vh - 32px); /* ضبط ارتفاع المحتوى */
+        position: relative;
+    }
+    .header-inner-left{
+        text-align: left; /* محاذاة النصوص إلى اليسار */
+    }
+    .header-inner-left .text{
+        margin-left: 0; /* إزالة الهامش الأيسر */
+    }
+    .header-inner-left .btn-group{
+        justify-content: start; /* محاذاة الأزرار إلى اليسار */
+    }
+    .header-inner-right img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-left: 5rem;
+    }
+}
+
+@media(min-width: 1200px){
+    .navbar-show-btn, .navbar-hide-btn{
+        display: none; /* إخفاء أزرار القائمة المنسدلة */
+    }
+    .navbar-collapse{
+        transform: translateX(0); /* عرض القائمة بشكل دائم */
+        position: relative;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 60%;
+        height: auto;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+    }
+    .navbar-nav{
+        display: flex;
+    }
+    .nav-item{
+        margin-left: 3.5rem; /* ضبط المسافة بين عناصر القائمة */
+    }
+    .nav-link{
+        color: var(--light-color);
+        opacity: 1;
+        font-weight: 500;
+        position: relative;
+    }
+    .nav-link::after{
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: var(--light-color);
+        opacity: 0;
+        transition: var(--transition);
+    }
+    .nav-link:hover::after{
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+/* ضبط حدود الصفحة */
+@media(min-width: 1480px){
+    .container{
+        max-width: 81vw;
+    }
+}
+
+/* تعطيل التحولات والأنيميشن عند تغيير الحجم */
+.resize-animation-stopper *{
+    animation: none!important;
+    transition: none!important;
+}
+
+/* تقليل ارتفاع الهيدر */
+.header {
+    min-height: 60vh; /* تقليل الارتفاع */
+    padding: 2rem 0; /* تقليل التباعد الداخلي */
+}
+
+/* ضبط المحتوى الداخلي للهيدر */
+.header-inner {
+    padding-top: 6rem; /* تقليل المسافة العلوية */
+}
+
+/* تصغير حجم العنوان الرئيسي */
+.header-inner-left h1 {
+    font-size: 3rem; /* تصغير حجم الخط */
+}
+
+/* ضبط المسافة العلوية للصورة */
+.header-inner-right {
+    margin-top: 2rem; /* تقليل الفراغ العلوي */
+}
+/* قسم حول (About Section) */
+.section-head h2{
+    font-size: 4rem; /* تحديد حجم العنوان */
+    font-weight: 500; /* تحديد وزن الخط */
+    margin-bottom: 3rem; /* تباعد أسفل العنوان */
+    text-align: center; /* توسيط العنوان */
+}
+.border-line{
+    height: .4rem; /* تحديد ارتفاع الخط الفاصل */
+    width: 100%; /* جعله يمتد على كامل العرض */
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--light-gray); /* لون الخط */
+    position: relative; /* ضبط موضعه بالنسبة للعناصر الأخرى */
+}
+.border-line::after{
+    content: ""; /* إضافة عنصر افتراضي */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); /* توسيط العنصر */
+    height: 100%;
+    width: 102px; /* تحديد عرض العنصر */
+    background-color: var(--light-blue-color); /* تغيير لون الجزء المركزي */
+}
+.about-left{
+    margin-bottom: 6rem; /* تباعد أسفل القسم الأيسر */
+}
+.about-right{
+    margin-top: 16.8rem; /* تباعد أعلى القسم الأيمن */
+}
+.about-left .text{
+    margin: 5.6rem 0; /* تباعد فوق وتحت النص */
+    line-height: 2.3; /* تحديد ارتفاع السطر لتحسين القراءة */
+}
+.about .btn-white{
+    color: var(--dark-gray); /* لون زر التفاصيل */
+}
+.about-right .img{
+    width: 100%; /* جعل الصورة تأخذ كامل العرض */
+    
+    max-width: 537px; /* أقصى عرض للصورة */
+    position: relative; /* السماح بإضافة تأثيرات أخرى عليها */
+}
+.about-right .img img{
+    padding-top: 10rem; /* إزاحة الصورة نحو الأسفل */
+    -webkit-transform: scaleX(1.03);
+        -ms-transform: scaleX(1.03);
+            transform: scaleX(1.03); /* تكبير بسيط للصورة */
+}
+.about-right .img::after, .about-right .img::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.about-right .img::after{
+    top: -56px;
+    left: 0;
+ 
+    z-index: -1; /* التأكد من أن الخلفية خلف الصورة */
+}
+.about-right .img::before{
+    top: -112px;
+    left: 0;
+   
+    z-index: -2;
+}
+
+/* قسم البانر الأول (Banner One Section) */
+.banner-one{
+    
+    background: linear-gradient(rgba(18, 77, 171, 0.9), rgba(0, 90, 213, 0.85)), url('../img/blog-sidebar2.jpg') top/cover no-repeat; /* خلفية متدرجة مع صورة */
+    height: 480px; /* تحديد ارتفاع القسم */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; /* جعل العناصر في صف أفقي */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /* توسيط المحتوى عموديًا */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /* توسيط المحتوى أفقيًا */
+}
+.banner-one .lead{
+    font-size: 2.8rem; /* حجم الخط الرئيسي */
+    font-weight: 500; /* وزن الخط */
+    max-width: 600px; /* الحد الأقصى لعرض النص */
+}
+.banner-one .text-sm{
+    font-weight: 500; /* وزن الخط للنص الصغير */
+}
+/* قسم الخدمات (Services Section) */
+.services .section-head .text-lg{
+    color: var(--dark-gray); /* ضبط لون النص الرئيسي */
+    margin-top: -2rem; /* تحريك النص للأعلى */
+}
+.services .section-head img{
+    margin: 3.7rem auto; /* ضبط هامش الصورة لتكون في المنتصف */
+}
+.line-art{
+    max-width: 40px; /* ضبط الحد الأقصى لعرض العنصر */
+    margin: auto; /* توسيطه داخل القسم */
+}
+.line-art img{
+    width: 100px; /* تحديد حجم الصورة داخل العنصر */
+}
+.line-art div{
+    width: 100px; /* عرض الخط */
+    height: 2px; /* ارتفاع الخط */
+    background-color: var(--light-gray); /* لون الخط */
+}
+.services-inner{
+    padding: 6rem 0; /* إضافة تباعد داخلي للقسم */
+}
+.service-item{
+    padding: 3rem; /* تباعد داخلي لكل عنصر خدمة */
+    margin-bottom: 3rem; /* تباعد أسفل كل عنصر */
+}
+.service-item:last-child{
+    margin-bottom: 0; /* إزالة التباعد السفلي للعنصر الأخير */
+}
+.service-item .icon img{
+    width: 80px; /* ضبط حجم صورة الأيقونة */
+    margin: auto; /* توسيطها داخل العنصر */
+}
+.service-item h3{
+    margin: 5rem 0; /* إضافة تباعد حول العنوان */
+    opacity: 0.7; /* تخفيف شفافية النص قليلاً */
+}
+
+/* قسم البانر الثاني (Banner Two Section) */
+.banner-two{
+    background: linear-gradient(rgba(0, 80, 213, 0.9), rgba(0, 90, 213, 0.85)), url('../img/blog-sidebar2.jpg') top/cover no-repeat; /* تعيين خلفية متدرجة مع صورة */
+    padding: 13.6rem 0; /* ضبط التباعد الداخلي */
+}
+.banner-two-left img{
+    max-width: 620px; /* الحد الأقصى لحجم الصورة */
+    margin: auto; /* توسيط الصورة */
+}
+.banner-two-right .lead{
+    font-size: 2.2rem; /* حجم الخط الرئيسي */
+    margin-top: 6rem; /* تباعد علوي */
+}
+.banner-two-right .btn-group{
+    margin-top: 6rem; /* تباعد علوي للأزرار */
+    justify-content: center; /* توسيط الأزرار داخل القسم */
+}
+
+/* قسم الأطباء (Doctors Panel) */
+.doc-panel-inner{
+    margin-top: 8rem; /* إضافة هامش علوي */
+}
+.doc-panel-item{
+    margin-bottom: 6rem; /* تحديد التباعد بين عناصر الأطباء */
+}
+.doc-panel-item:last-child{
+    margin-bottom: 0; /* إزالة التباعد السفلي للعنصر الأخير */
+}
+.doc-panel-item .img{
+    position: relative; /* ضبط موضع الصورة */
+    height: 440px; /* تحديد ارتفاع العنصر */
+    background-color: var(--light-gray); /* لون الخلفية */
+    overflow: hidden; /* منع ظهور أي جزء زائد */
+    align-items: flex-end; /* محاذاة المحتوى في الأسفل */
+}
+.doc-panel-item .img .info{
+    position: absolute; /* تحديد الموقع داخل العنصر */
+    bottom: -100%; /* إخفاء المعلومات في البداية */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    flex-direction: column; /* ترتيب النص عمودياً */
+    transition: var(--transition); /* إضافة تأثير التحويل */
+}
+.doc-panel-item:hover .info{
+    bottom: 0; /* إظهار المعلومات عند تمرير الماوس */
+}
+
+/* قسم باقة الخدمات (Package Service) */
+.package-service-inner{
+    margin-top: 14rem; /* هامش علوي */
+}
+.package-service{
+    background: linear-gradient(rgba(0, 80, 213, 0.85), rgba(0, 80, 213, 0.95)), url('../img/blog1.jpg') center/cover no-repeat; /* خلفية متدرجة مع صورة */
+}
+.package-service-head{
+    color: var(--light-color); /* ضبط لون العنوان */
+}
+.package-service-head h2{
+    font-size: 39px; /* حجم العنوان الرئيسي */
+}
+.package-service-item{
+    padding: 3rem 5rem; /* التباعد الداخلي للعنصر */
+    position: relative; /* تعيين الموقع النسبي */
+    margin-bottom: 12rem; /* تحديد المسافة بين العناصر */
+}
+.package-service-item:last-child{
+    margin-bottom:100; /* إزالة التباعد السفلي للعنصر الأخير */
+}
+.package-service-item .icon{
+    width: 86px; /* حجم الأيقونة */
+    height: 86px;
+    background-color: var(--light-blue-color); /* لون الخلفية */
+    border-radius: 2rem; /* شكل دائري للزوايا */
+    border-bottom-right-radius: 0; /* إزالة الزاوية اليمنى السفلية */
+    color: var(--light-color); /* لون الأيقونة */
+    position: absolute;
+    top: -43px; /* رفع الأيقونة للأعلى */
+    left: 50%; /* توسيط الأيقونة */
+    transform: translateX(-50%) rotate(45deg); /* تدوير الأيقونة */
+}
+.package-service-item .icon i{
+    transform: rotate(-45deg); /* تدوير الأيقونة الداخلية */
+}
+.package-service-item h3{
+    opacity: 0.7; /* شفافية العنوان */
+    margin: 8rem 0 4rem 0; /* تباعد علوي وسفلي */
+}
+.package-service-item .text-sm{
+    color: var(--dark-gray); /* لون النص */
+}
+.package-service-item .btn{
+    margin: 4rem 0; /* تحديد المسافة حول الزر */
+}
+/* قسم المنشورات (Posts Section) */
+.posts{
+    background-color: var(--light-gray); /* تعيين لون الخلفية للمنشورات */
+}
+.posts-inner{
+    margin-top: 6rem; /* إضافة مسافة علوية للقسم */
+}
+.post-item{
+    padding: 1.2rem; /* تحديد التباعد الداخلي لكل عنصر */
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow); /* إضافة ظل للصندوق */
+    margin-bottom: 6rem; /* تباعد بين العناصر */
+}
+.post-item:last-child{
+    margin-bottom: 0; /* إزالة التباعد السفلي للعنصر الأخير */
+}
+.post-item .content{
+    padding: 3rem 2rem 1rem 2rem; /* ضبط المسافات الداخلية للمحتوى */
+}
+.post-item h4{
+    margin-bottom: 1rem; /* تحديد المسافة أسفل العنوان */
+}
+.post-item .text{
+    padding: 1rem 0; /* ضبط المسافات حول النص */
+}
+.post-item .info{
+    justify-content: space-between; /* توزيع العناصر داخل قسم المعلومات */
+    color: var(--dark-gray); /* لون النص */
+}
+.post-item .info .text{
+    padding-bottom: 0; /* إزالة التباعد السفلي للنص */
+}
+
+/* قسم التواصل (Contact Section) */
+.contact-left{
+    margin-bottom: 6rem; /* تحديد مسافة أسفل القسم */
+    height: 100%; /* ضبط الارتفاع */
+}
+.contact-left iframe{
+    width: 100%; /* جعل الخريطة تأخذ كامل العرض */
+    height: 100%; /* ضبط الارتفاع */
+    object-fit: cover; /* ضبط حجم الخريطة بشكل مناسب */
+}
+.contact-right{
+    padding: 5rem 4rem; /* ضبط التباعد الداخلي للقسم */
+}
+.contact-right form{
+    margin-top: 5rem; /* إضافة هامش علوي للنموذج */
+}
+.form-element .form-control{
+    width: 100%; /* جعل حقل الإدخال يأخذ العرض بالكامل */
+    background-color: #3373dd; /* تحديد لون الخلفية */
+    border: none; /* إزالة الحدود */
+    outline: 0; /* إزالة تأثير التركيز */
+    padding: 1rem 1.6rem; /* ضبط التباعد الداخلي */
+    margin-bottom: 1.6rem; /* تحديد تباعد بين الحقول */
+    color: var(--light-color); /* لون النص داخل الحقل */
+}
+.form-element .form-control::placeholder{
+    color: var(--light-color); /* ضبط لون نص العنصر النائب */
+}
+.btn-submit{
+    margin-top: 4rem; /* تباعد علوي للزر */
+}
+.btn-submit i{
+    margin-right: 2rem; /* تحديد المسافة بين الأيقونة والنص */
+}
+
+/* قسم التذييل (Footer Section) */
+.footer{
+    background-color: var(--dark-color); /* تعيين لون الخلفية */
+}
+.footer-item{
+    margin-bottom: 6rem; /* ضبط المسافات بين عناصر التذييل */
+}
+.footer-item:last-child{
+    margin-bottom: 0; /* إزالة التباعد السفلي للعنصر الأخير */
+}
+.footer-head{
+    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+    font-weight: 500; /* تحديد وزن الخط */
+    font-size: 2.4rem; /* حجم العنوان */
+    margin-bottom: 4rem; /* مسافة أسفل العنوان */
+}
+.footer-item .icon{
+    width: 120px; /* حجم الأيقونات */
+    margin: auto; /* توسيط الأيقونة */
+}
+.footer-item .text{
+    padding: 3rem 0; /* ضبط المسافات حول النص */
+    max-width: 500px; /* تحديد عرض النص */
+    margin-right: auto;
+    margin-left: auto; /* توسيطه داخل القسم */
+}
+.footer-item address{
+    font-size: 1.5rem; /* حجم النص */
+    font-style: normal; /* إزالة الميلان */
+}
+.footer-item .tags-list{
+    flex-wrap: wrap; /* السماح بتوزيع العلامات على أكثر من سطر */
+}
+.footer-item .tags-list li{
+    margin: .5rem 1rem; /* ضبط المسافات بين العناصر */
+    padding: .5rem 1rem; /* تباعد داخلي */
+    background-color: rgb(58, 58, 58); /* تحديد لون الخلفية */
+    border-radius: .4rem; /* تدوير الحواف */
+}
+.footer-item a{
+    margin-bottom: 1rem; /* ضبط التباعد السفلي للروابط */
+    display: inline-block; /* جعل الروابط تظهر كمربعات */
+    transition: var(--transition); /* إضافة تأثير التحويل */
+}
+.footer-item a:hover{
+    color: var(--dark-gray); /* تغيير لون الرابط عند المرور عليه */
+}
+.footer-item:last-child .text{
+    padding-top: 0; /* إزالة التباعد العلوي للنص */
+}
+.footer-item .appointment-info li{
+    margin: 1rem 0; /* ضبط التباعد بين العناصر */
+}
+.footer-item .appointment-info li span{
+    margin-left: 1rem; /* ضبط المسافة بين العناصر */
+}
+.footer-links{
+    border-top: 2px solid var(--dark-gray); /* إضافة خط علوي */
+    padding: 4.5rem 0; /* ضبط المسافات داخل القسم */
+}
+.footer-links li{
+    margin: 0 2.4rem; /* تحديد المسافة بين الروابط */
+    font-size: 2rem; /* حجم النص */
+}
+.footer-links li a{
+    height: 40px;
+    width: 40px; /* حجم الأيقونات */
+    border-radius: 50%; /* جعل الأيقونات دائرية */
+    border: 2px solid var(--light-color); /* تحديد لون الحدود */
+    transition: var(--transition); /* إضافة تأثير التحويل */
+}
+.footer-links li a:hover{
+    background-color: var(--light-color); /* تغيير لون الخلفية عند المرور */
+    color: var(--fros-blue-color); /* تغيير لون النص */
+}
+/* إعدادات الوسائط (Media Queries) */
+
+/* عندما يكون عرض الشاشة 450 بكسل أو أكثر */
+@media(min-width: 450px){
+    .navbar-collapse{
+        width: 320px; /* تحديد عرض قائمة التنقل المنسدلة */
+    }
+    .btn-group .btn{
+        width: auto; /* السماح للأزرار بالحجم التلقائي */
+    }
+    .btn-group .btn:first-child{
+        margin-right: 48px; /* إضافة هامش يمين للزر الأول */
+        margin-bottom: 0; /* إزالة أي هامش سفلي */
+    }
+    .border-line{
+        width: 405px; /* تغيير عرض الخط الفاصل */
+    }
+}
+
+/* عندما يكون عرض الشاشة 768 بكسل أو أكثر */
+@media(min-width: 768px){
+    .header-inner-left h1{
+        font-size: 5.7rem; /* تكبير حجم عنوان الرأس */
+    }
+    .services-inner, .doc-panel-inner{
+        grid-template-columns: repeat(2, 1fr); /* ترتيب العناصر في عمودين */
+    }
+    .doc-panel-inner{
+        column-gap: 3rem; /* تحديد المسافة بين الأعمدة */
+    }
+    .doc-panel .section-head h2{
+        text-align: left; /* محاذاة العنوان لليسار */
+    }
+    .package-service-inner, .posts-inner, .footer-inner{
+        grid-template-columns: repeat(2, 1fr); /* تقسيم المحتوى إلى عمودين */
+        column-gap: 6rem; /* إضافة مسافة بين الأعمدة */
+    }
+    .footer-inner{
+        text-align: left; /* محاذاة محتوى التذييل لليسار */
+    }
+    .footer-item .icon, .footer-item .text{
+        margin-left: 0; /* إزالة التوسيط التلقائي */
+    }
+    .footer-item .tags-list{
+        justify-content: flex-start; /* محاذاة قائمة الوسوم للبداية */
+    }
+}
+
+/* عندما يكون عرض الشاشة 992 بكسل أو أكثر */
+@media(min-width: 992px){
+    .header-inner{
+        padding-top: 3.2rem; /* إضافة تباعد علوي */
+    }
+    .header-inner .container{
+        grid-template-columns: 545px auto; /* ضبط ترتيب الأعمدة */
+        align-items: center; /* محاذاة العناصر للوسط */
+        height: calc(100vh - 32px); /* ضبط ارتفاع العنصر ليكون ملائمًا للشاشة */
+        position: relative; /* تحديد موضع العنصر */
+    }
+    .header-inner-left{
+        text-align: left; /* محاذاة النصوص لليسار */
+    }
+    .header-inner-left .text{
+        margin-left: 0; /* إزالة أي هامش يساري */
+    }
+    .header-inner-right img{
+        position: absolute; /* تثبيت الصورة بمكان معين */
+        bottom: 0;
+        right: 0;
+        padding-left: 5rem; /* ضبط المسافة اليسرى */
+    }
+    .about-inner .container{
+        grid-template-columns: repeat(2, 1fr); /* ترتيب العناصر في عمودين */
+        column-gap: 3rem; /* ضبط المسافة بين الأعمدة */
+    }
+    .about-left{
+        text-align: left; /* محاذاة النصوص لليسار */
+        margin-bottom: 0; /* إزالة التباعد السفلي */
+    }
+    .border-line{
+        margin-left: 0; /* محاذاة الخط الفاصل لليسار */
+    }
+    .about-right{
+        margin-left: auto; /* السماح بالتحرك نحو اليمين */
+        margin-top: 0.2rem; /* إضافة تباعد علوي */
+    }
+}
+
+/* عندما يكون عرض الشاشة 1200 بكسل أو أكثر */
+@media(min-width: 1200px){
+    .navbar-show-btn, .navbar-hide-btn{
+        display: none; /* إخفاء زر إظهار وإخفاء القائمة */
+    }
+    .navbar-collapse{
+        transform: translateX(0); /* إبقاء القائمة ثابتة */
+        position: relative; /* تحديد موضعها */
+        flex-direction: row; /* ترتيب العناصر أفقيًا */
+        justify-content: flex-end; /* وضع القائمة في أقصى اليمين */
+        align-items: center; /* محاذاة العناصر عموديًا */
+        width: 100%;
+        height: auto;
+        padding: 0;
+        background-color: transparent; /* إزالة الخلفية */
+    }
+    .nav-link:hover::after{
+        opacity: 1; /* جعل التأثير مرئيًا عند المرور */
+        width: 100%; /* تمديد الخط السفلي */
+    }
+}
+
+/* عندما يكون عرض الشاشة 1480 بكسل أو أكثر */
+@media(min-width: 1480px){
+    .container{
+        max-width: 81vw; /* ضبط العرض ليكون 81% من الشاشة */
+    }
+}
+
+/* تعطيل التحولات والأنيميشن أثناء تغيير الحجم */
+.resize-animation-stopper *{
+    animation: none!important; /* تعطيل الحركة */
+    transition: none!important; /* تعطيل التحولات */
+}
+/* إعدادات الوسائط (Media Queries) */
+
+/* عندما يكون عرض الشاشة 992 بكسل أو أكثر */
+@media(min-width: 992px){
+    .doc-panel-item{
+        margin-bottom: 0; /* إزالة التباعد السفلي لعناصر لوحة الأطباء */
+    }
+    .package-service-inner{
+        grid-template-columns: repeat(3, 1fr); /* ترتيب عناصر الخدمات ضمن 3 أعمدة */
+    }
+    .package-service-item{
+        margin-bottom: 0; /* إزالة التباعد السفلي لعناصر الخدمات */
+    }
+
+    .contact .container{
+        grid-template-columns: repeat(2, 1fr); /* ترتيب عناصر قسم التواصل ضمن عمودين */
+        column-gap: 2.4rem; /* تحديد المسافة بين الأعمدة */
+    }
+}
+
+/* عندما يكون عرض الشاشة 1200 بكسل أو أكثر */
+@media(min-width: 1200px){
+    .navbar-show-btn, .navbar-hide-btn{
+        display: none; /* إخفاء أزرار عرض وإخفاء القائمة */
+    }
+    .navbar-collapse{
+        transform: translateX(0); /* إبقاء القائمة في موضعها */
+        position: relative; /* تحديد موقع القائمة */
+        flex-direction: row; /* ترتيب عناصر القائمة بشكل أفقي */
+        justify-content: flex-end; /* محاذاة القائمة إلى أقصى اليمين */
+        align-items: center; /* محاذاة العناصر عموديًا */
+        width: 100%;
+        height: auto;
+        padding: 0;
+        background-color: transparent; /* إزالة لون الخلفية */
+        box-shadow: none; /* إزالة الظل */
+        transition: none; /* تعطيل تأثير التحويل */
+    }
+    .navbar-nav{
+        display: flex; /* عرض عناصر القائمة بشكل أفقي */
+    }
+    .nav-item{
+        margin: 0;
+        margin-left: 3.5rem; /* تحديد المسافة بين عناصر القائمة */
+    }
+    .nav-link{
+        color: var(--light-color); /* تعيين لون الروابط */
+        opacity: 1;
+        font-weight: 500;
+        position: relative;
+    }
+    .nav-link::after{
+        content: ""; /* إنشاء خط سفلي يظهر عند التفاعل */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: var(--light-color);
+        opacity: 0;
+        transition: var(--transition);
+    }
+    .nav-link:hover{
+        transform: none;
+        color: var(--light-color); /* تغيير لون الرابط عند التفاعل */
+    }
+    .nav-link:hover::after{
+        opacity: 1; /* جعل التأثير مرئيًا */
+        width: 100%; /* تمديد الخط السفلي */
+    }
+    
+    .search-bar{
+        margin-left: 5.5rem; /* إزاحة شريط البحث إلى اليسار */
+    }
+    .search-inner-right img{
+        padding-left: 0; /* إزالة التباعد الداخلي */
+        max-width: 647px; /* تحديد الحد الأقصى لحجم الصورة */
+    }
+    
+    .services-inner{
+        grid-template-columns: repeat(4, 1fr); /* ترتيب عناصر الخدمات ضمن 4 أعمدة */
+        column-gap: 2rem; /* تحديد المسافة بين الأعمدة */
+    }
+    .service-item{
+        margin-bottom: 0; /* إزالة التباعد السفلي لعناصر الخدمة */
+    }
+    .doc-panel-inner{
+        column-gap: 9rem; /* زيادة المسافة بين عناصر لوحة الأطباء */
+    }
+    .posts-inner{
+        grid-template-columns: repeat(3, 1fr); /* ترتيب عناصر المنشورات ضمن 3 أعمدة */
+    }
+    .post-item{
+        margin-bottom: 0; /* إزالة التباعد السفلي لعناصر المنشورات */
+    }
+
+    .contact .container{
+        grid-template-columns: auto 514px; /* ضبط عرض الأعمدة في قسم التواصل */
+    }
+    .footer-inner{
+        grid-template-columns: repeat(4, 1fr); /* ترتيب عناصر التذييل ضمن 4 أعمدة */
+        column-gap: 6rem; /* تحديد المسافة بين الأعمدة */
+    }
+}
+
+/* عندما يكون عرض الشاشة 1480 بكسل أو أكثر */
+@media(min-width: 1480px){
+    .container{
+        max-width: 81vw; /* ضبط العرض ليكون 81% من الشاشة */
+    }
+}
+
+/* تعطيل التحولات والأنيميشن أثناء تغيير الحجم */
+.resize-animation-stopper *{
+    animation: none!important; /* تعطيل الحركة */
+    transition: none!important; /* تعطيل التحولات */
+}
